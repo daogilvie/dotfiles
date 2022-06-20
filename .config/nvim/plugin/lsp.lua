@@ -60,3 +60,7 @@ lsp_conf.sumneko_lua.setup({
     },
   },
 })
+
+lsp_conf.pyright.setup({
+  on_attach = on_attach
+})
