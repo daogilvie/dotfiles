@@ -35,6 +35,15 @@ return require('packer').startup(function(use)
   use 'williamboman/nvim-lsp-installer'
   use 'neovim/nvim-lspconfig'
 
+  -- Completion Snippets
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/vim-vsnip'
+  use 'hrsh7th/vim-vsnip-integ'
+
   -- Telescope for searching
   use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/popup.nvim' }, { 'nvim-lua/plenary.nvim' } } }
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
@@ -52,7 +61,6 @@ return require('packer').startup(function(use)
 
   -- Movement commands
   use 'tpope/vim-unimpaired'
-
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

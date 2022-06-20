@@ -35,6 +35,7 @@ opt.copyindent = true
 
 -- Fold things via indent in the default case
 opt.foldmethod = 'indent'
+opt.foldlevel = 4
 
 -- I'm a brit
 opt.spelllang = 'en_gb'
@@ -44,5 +45,20 @@ opt.wrap = false
 opt.sidescroll = 5
 opt.scrolloff = 5
 
--- Paste mode always needs to be off when I leave Insert
-vim.api.nvim_create_autocmd('InsertLeave', { command = 'set nopaste' })
+-- Tweak nvim built-in text formatter
+-- Based on TJDevries config:
+-- https://github.com/tjdevries/config_manager/blob/master/xdg_config/nvim/plugin/options.lua
+opt.formatoptions = opt.formatoptions
+  -- No need for weird paragraph indentation.
+  - "2"
+  -- Disable builtin autoformatting
+  - "a"
+  - "t"
+  -- Comment handling niceties
+  + "j"
+  + "q"
+  -- Comment leader auto-insertion in all cases
+  + "o"
+  + "r"
+  -- Indented lists
+  + "n"
