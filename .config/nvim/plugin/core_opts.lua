@@ -33,8 +33,8 @@ opt.expandtab = true
 opt.autoindent = true
 opt.copyindent = true
 
--- Fold things via syntax
-opt.foldmethod = 'syntax'
+-- Fold things via indent in the default case
+opt.foldmethod = 'indent'
 
 -- I'm a brit
 opt.spelllang = 'en_gb'
