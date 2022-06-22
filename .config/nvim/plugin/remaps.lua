@@ -35,3 +35,13 @@ map({ 'n' }, '<leader>gg', ':G<CR>')
 map({ 'n' }, '<leader>gd', ':Gvdiffsplit!<CR>')
 map({ 'n' }, 'gdh', ':diffget //2<CR>')
 map({ 'n' }, 'gdl', ':diffget //3<CR>')
+
+-- Test stuff
+local neotest = require('neotest')
+local function test_current_file()
+  return neotest.run.run(vim.fn.expand("%"))
+end
+map({'n'}, '<leader>ts', neotest.summary.toggle)
+map({'n'}, '<leader>tf', test_current_file)
+map({'n'}, '<leader>tr', neotest.run.run)
+map({'n'}, '<leader>to', neotest.output.open)
