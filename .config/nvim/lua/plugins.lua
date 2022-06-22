@@ -63,6 +63,27 @@ return require('packer').startup(function(use)
   -- Movement commands
   use 'tpope/vim-unimpaired'
 
+  -- Better terminal / test integration
+  use 'tpope/vim-dispatch'
+  use 'mfussenegger/nvim-dap'
+  use 'mfussenegger/nvim-dap-python'
+  use {
+    'nvim-neotest/neotest',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'nvim-treesitter/nvim-treesitter',
+      'antoinemadec/FixCursorHold.nvim',
+    }
+  }
+  use {
+    'nvim-neotest/neotest-vim-test',
+    requires = {
+      'vim-test/vim-test'
+    }
+  }
+  use 'nvim-neotest/neotest-python'
+
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
