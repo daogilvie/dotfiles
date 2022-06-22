@@ -12,9 +12,7 @@ opt.cmdheight = 2
 opt.showcmd = true
 
 -- And space for the sign column
--- which we fill with git signs!
 opt.signcolumn = 'yes'
-require('gitsigns').setup()
 
 -- Line numbers, with relative/absolute toggling
 opt.number = true
