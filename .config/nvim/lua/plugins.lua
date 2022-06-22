@@ -34,6 +34,7 @@ return require('packer').startup(function(use)
   -- Language Server Stuffs
   use 'williamboman/nvim-lsp-installer'
   use 'neovim/nvim-lspconfig'
+  use 'nvim-lua/lsp-status.nvim'
 
   -- Completion Snippets
   use 'hrsh7th/cmp-nvim-lsp'

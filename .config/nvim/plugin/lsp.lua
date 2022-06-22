@@ -3,8 +3,11 @@ require('nvim-lsp-installer').setup {
   automatic_installation = true
 }
 
-local lsp_conf = require 'lspconfig'
 local cmp = require 'cmp'
+local lsp_conf = require 'lspconfig'
+local lsp_status = require('lsp-status')
+
+lsp_status.register_progress()
 
 local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
