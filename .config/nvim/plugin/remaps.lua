@@ -26,6 +26,11 @@ end)
 map({ 'n' }, '<leader>ss', function()
   tele.grep_string({ search = vim.fn.input('Rg> '), use_regex = true })
 end)
+map({ 'n' }, '<leader>R', tele.lsp_dynamic_workspace_symbols)
+map({ 'n' }, '<leader>r', tele.lsp_document_symbols)
+map({ 'n' }, '<leader>rw', function()
+  tele.lsp_workspace_symbols({query = vim.fn.expand('<cword>')})
+end)
 
 -- Various git-related things
 -- Quick access to the fugitive screen
