@@ -30,6 +30,7 @@ return require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
+  use 'nvim-treesitter/nvim-treesitter-textobjects'
 
   -- Language Server Stuffs
   use 'williamboman/nvim-lsp-installer'
