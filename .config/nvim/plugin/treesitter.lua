@@ -2,6 +2,8 @@ require 'nvim-treesitter.configs'.setup {
   ensure_installed = 'all',
   highlight = {
     enable = true,
+    -- Doesn't seem to work so good on markdown and internal help
+    disable = { "help", "markdown" },
   },
   textobjects = {
     select = {
