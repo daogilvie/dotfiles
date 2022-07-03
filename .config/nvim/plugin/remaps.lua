@@ -50,3 +50,6 @@ map({'n'}, '<leader>ts', neotest.summary.toggle)
 map({'n'}, '<leader>tf', test_current_file)
 map({'n'}, '<leader>tr', neotest.run.run)
 map({'n'}, '<leader>to', neotest.output.open)
+
+-- Quick access for Make (from Dispatch.vim)
+map({'n'}, '<leader>M', ':Make<CR>')
