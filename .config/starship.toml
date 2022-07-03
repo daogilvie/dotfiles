@@ -1,0 +1,8 @@
+# Starship config! 
+
+# I've decided that I don't like the blank lines
+add_newline = false
+
+[package]
+symbol = "🎁 "
+display_private = true
