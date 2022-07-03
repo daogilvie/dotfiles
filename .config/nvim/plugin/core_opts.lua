@@ -62,3 +62,6 @@ opt.formatoptions = opt.formatoptions
   + "r"
   -- Indented lists
   + "n"
+
+-- I am impatient
+opt.timeoutlen = 200
