@@ -1,5 +1,6 @@
 local actions = require('telescope.actions')
 local action_state = require('telescope.actions.state')
+local fb_actions = require "telescope".extensions.file_browser.actions
 
 local custom_actions = {}
 
@@ -70,20 +71,31 @@ require('telescope').setup {
     mappings = {
       i = {
         ['<C-q>'] = actions.send_to_qflist,
-        ['<tab>'] = actions.toggle_selection + actions.move_selection_next,
-        ['<s-tab>'] = actions.toggle_selection + actions.move_selection_previous,
+        ['<tab>'] = actions.toggle_selection,
+        ['<s-tab>'] = actions.toggle_selection,
         ['<cr>'] = custom_actions.fzf_multi_select
       },
       n = {
         ['<C-q>'] = actions.send_to_qflist,
-        ['<tab>'] = actions.toggle_selection + actions.move_selection_next,
-        ['<s-tab>'] = actions.toggle_selection + actions.move_selection_previous,
+        ['<tab>'] = actions.toggle_selection,
+        ['<s-tab>'] = actions.toggle_selection,
         ['<cr>'] = custom_actions.fzf_multi_select
       },
     }
   },
   extensions = {
+    file_browser = {
+      mappings = {
+        i = {
+          ['<C-r>'] = fb_actions.rename,
+          ['<C-y>'] = fb_actions.copy,
+          ['<C-m>'] = fb_actions.move,
+          ['<C-d>'] = fb_actions.remove,
+          ['<C-n>'] = fb_actions.create_from_prompt,
+        },
+      }
+    }
   }
 }
 require('telescope').load_extension('fzf')
-require('telescope').load_extension 'file_browser'
+require('telescope').load_extension('file_browser')
