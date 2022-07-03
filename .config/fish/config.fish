@@ -8,13 +8,5 @@ set -g -x VISUAL nvim
 # And less as pager
 set -g -x PAGER less
 
-
 # Enable VI mode bindings
 fish_vi_key_bindings
-
-if status --is-login
-    set -g fish_greeting "Hello there"
-else
-    set -g fish_greeting ""
-end
-
