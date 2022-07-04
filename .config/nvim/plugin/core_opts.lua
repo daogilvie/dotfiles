@@ -64,4 +64,4 @@ opt.formatoptions = opt.formatoptions
   + "n"
 
 -- I am impatient
-opt.timeoutlen = 200
+opt.timeoutlen = 400
