@@ -23,18 +23,6 @@ if test -d ~/.asdf
     if ! test -L ~/.config/fish/completions/asdf.fish
         mkdir -p ~/.config/fish/completions; and ln -s ~/.asdf/completions/asdf.fish ~/.config/fish/completions
     end
-
-    if asdf plugin list | grep -q direnv
-        asdf exec direnv hook fish | source
-        function direnv
-            asdf exec direnv $argv
-        end
-    end
-end
-
-# Hook direnv if present
-if command -sq direnv
-    direnv hook fish | source
 end
 
 # Hook in zoxide if present
