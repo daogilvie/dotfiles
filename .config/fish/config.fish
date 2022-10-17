@@ -1,4 +1,6 @@
-test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+if test $TERM_PROGRAM = "iTerm.app" 
+    test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+end
 set -x ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX YES
 
 # Set nvim as editor
