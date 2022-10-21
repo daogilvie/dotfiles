@@ -3,6 +3,9 @@
 # I've decided that I don't like the blank lines
 add_newline = false
 
+# Wait a little longer for things (lots of cold starts)
+command_timeout = 700
+
 [package]
 symbol = "🎁 "
 display_private = true

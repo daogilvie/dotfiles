@@ -5,6 +5,15 @@ require 'nvim-treesitter.configs'.setup {
     -- Doesn't seem to work so good on markdown and internal help
     disable = { "help", "markdown" },
   },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn",
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm",
+    },
+  },
   textobjects = {
     select = {
       enable = true,

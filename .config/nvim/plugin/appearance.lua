@@ -11,6 +11,9 @@ opt.termguicolors = true
 opt.cmdheight = 2
 opt.showcmd = true
 
+-- Have one big statusline
+opt.laststatus = 3
+
 -- And space for the sign column
 opt.signcolumn = 'yes'
 

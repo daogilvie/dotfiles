@@ -54,6 +54,7 @@ return require('packer').startup(function(use)
 
   -- Git integration
   use 'tpope/vim-fugitive'
+  use 'tpope/vim-rhubarb' -- For github+fugitive
   use 'lewis6991/gitsigns.nvim'
 
   -- Session Management made dead easy
