@@ -9,3 +9,13 @@ command_timeout = 700
 [package]
 symbol = "🎁 "
 display_private = true
+
+[gcloud]
+format = 'on [$symbol$project]($style) '
+
+[kubernetes]
+format = 'on [$symbol $context](dimmed green) '
+symbol = "⛵"
+disabled = false
+[kubernetes.context_aliases]
+"gke_foyer-(?P<var_sp>[\\w]+)_.*" = "Foyer $var_sp"

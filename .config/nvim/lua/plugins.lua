@@ -52,6 +52,11 @@ return require('packer').startup(function(use)
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use 'nvim-telescope/telescope-file-browser.nvim'
 
+  -- Or maybe fzf lua?
+  use { 'ibhagwan/fzf-lua',
+    requires = { 'kyazdani42/nvim-web-devicons' }
+  }
+
   -- Git integration
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb' -- For github+fugitive

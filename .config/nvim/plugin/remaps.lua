@@ -13,11 +13,20 @@ map({ 'n' }, '<leader>Y', 'gg"+yG')
 map({ 'n', 'v' }, '<leader>d', '"_d')
 
 -- Various searchy/openy bindings
+-- local fzflua = require('fzf-lua')
+-- map({ 'n' }, '<C-f>', fzflua.live_grep)
+-- map({ 'n' }, '<C-p>', fzflua.git_files)
+-- map({ 'n' }, '<leader>p', fzflua.buffers)
+-- map({ 'n' }, '<leader>o', fzflua.files)
+-- map({ 'n' }, '<leader>sw', fzflua.grep_cword)
+-- map({ 'n' }, '<leader>R', fzflua.lsp_live_workspace_symbols)
+-- map({ 'n' }, '<leader>r', fzflua.lsp_document_symbols)
+
 local tele = require 'telescope.builtin'
 local tele_file_browser = require 'telescope'.extensions.file_browser.file_browser
 
 map({ 'n' }, '<C-f>', tele.live_grep)
-map({ 'n' }, '<C-p>', tele.git_files)
+map({ 'n' }, '<C-p>', tele.find_files)
 map({ 'n' }, '<leader>p', tele.buffers)
 map({ 'n' }, '<leader>o', tele_file_browser)
 map({ 'n' }, '<leader>O', function()

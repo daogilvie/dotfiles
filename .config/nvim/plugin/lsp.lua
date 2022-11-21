@@ -147,3 +147,38 @@ lsp_conf.pyright.setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
+
+-- lsp_conf.pylsp.setup({
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+--   settings = {
+--     cmd = { "pylsp -v" },
+--     formatCommand = { "black" },
+--     configurationSources = { "pylint" },
+--     pylsp = {
+--       plugins = {
+--         pylint = { enabled = false },
+--         black = { enabled = true },
+--         isort = { enabled = true },
+--         pycodestyle = { enabled = false },
+--         mccabe = { enabled = false },
+--         pyflakes = { enabled = false },
+--       }
+--     }
+--   }
+-- })
+
+lsp_conf.marksman.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+lsp_conf.jsonls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+lsp_conf.tsserver.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
