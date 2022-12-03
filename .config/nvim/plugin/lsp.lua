@@ -177,6 +177,16 @@ lsp_conf.pyright.setup({
 --   }
 -- })
 
+
+-- lsp_conf.zls.setup({
+--     on_attach = on_attach,
+--     capabilities = capabilities,
+--     settings = {
+--         cmd = { "zls" },
+--         formatCommand = { "zig fmt" }
+--     }
+-- })
+
 lsp_conf.marksman.setup({
   on_attach = on_attach,
   capabilities = capabilities,
