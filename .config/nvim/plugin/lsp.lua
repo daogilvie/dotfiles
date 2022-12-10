@@ -158,36 +158,6 @@ lsp_conf.pyright.setup({
     capabilities = capabilities,
 })
 
--- lsp_conf.pylsp.setup({
---   on_attach = on_attach,
---   capabilities = capabilities,
---   settings = {
---     cmd = { "pylsp -v" },
---     formatCommand = { "black" },
---     configurationSources = { "pylint" },
---     pylsp = {
---       plugins = {
---         pylint = { enabled = false },
---         black = { enabled = true },
---         isort = { enabled = true },
---         pycodestyle = { enabled = false },
---         mccabe = { enabled = false },
---         pyflakes = { enabled = false },
---       }
---     }
---   }
--- })
-
-
-lsp_conf.zls.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-    settings = {
-        cmd = { "zls" },
-        formatCommand = { "zig fmt" }
-    }
-})
-
 lsp_conf.marksman.setup({
     on_attach = on_attach,
     capabilities = capabilities,
@@ -198,7 +168,22 @@ lsp_conf.jsonls.setup({
     capabilities = capabilities,
 })
 
+lsp_conf.zls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+lsp_conf.rust_analyzer.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
 lsp_conf.tsserver.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+lsp_conf.svelte.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
 })

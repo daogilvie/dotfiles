@@ -1,3 +1,5 @@
+vim.opt.shell = 'sh'
+
 --[[
      Auto bootstrapper code, taken from example in packer repo readme
      (https://github.com/wbthomason/packer.nvim#bootstrapping)
@@ -97,6 +99,8 @@ return require('packer').startup(function(use)
     }
     use 'nvim-neotest/neotest-python'
 
+  -- Language specific definitions
+  use 'ziglang/zig.vim'
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
