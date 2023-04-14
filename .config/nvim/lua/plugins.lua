@@ -22,6 +22,7 @@ return require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons' }
     }
     use 'arcticicestudio/nord-vim'
+    use 'overcache/NeoSolarized'
 
     -- Surround/Comment manipulation
     use 'tpope/vim-surround'

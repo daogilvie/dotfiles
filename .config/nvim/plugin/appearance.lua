@@ -1,7 +1,7 @@
 local opt = vim.opt
 
 -- Nord!
-vim.cmd('colorscheme nord')
+vim.cmd('colorscheme NeoSolarized')
 
 -- Use termgui colors
 opt.termguicolors = true
