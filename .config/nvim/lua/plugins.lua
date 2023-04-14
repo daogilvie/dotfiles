@@ -106,6 +106,7 @@ return require('packer').startup(function(use)
     -- Language specific definitions
     use 'ziglang/zig.vim'
     use 'NoahTheDuke/vim-just'
+    use 'earthly/earthly.vim'
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
