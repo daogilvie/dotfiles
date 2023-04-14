@@ -196,6 +196,16 @@ lsp_conf.svelte.setup({
     capabilities = capabilities,
 })
 
+lsp_conf.terraformls.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+})
+
+lsp_conf.tflint.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+})
+
 -- Null ls covers off the odds and sods that main servers might not cater to.
 
 require("mason-null-ls").setup({
