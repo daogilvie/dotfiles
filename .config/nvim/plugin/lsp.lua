@@ -206,6 +206,11 @@ lsp_conf.tflint.setup({
     capabilities = capabilities,
 })
 
+lsp_conf.gopls.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+})
+
 -- Null ls covers off the odds and sods that main servers might not cater to.
 
 require("mason-null-ls").setup({
