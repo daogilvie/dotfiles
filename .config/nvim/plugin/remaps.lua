@@ -27,6 +27,7 @@ local tele_file_browser = require 'telescope'.extensions.file_browser.file_brows
 
 map({ 'n' }, '<C-f>', tele.live_grep)
 map({ 'n' }, '<C-p>', tele.find_files)
+map({ 'n' }, '<leader>e', tele.symbols)
 map({ 'n' }, '<leader>p', tele.buffers)
 map({ 'n' }, '<leader>o', tele_file_browser)
 map({ 'n' }, '<leader>O', function()
