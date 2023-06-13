@@ -22,6 +22,9 @@ fish_add_path /usr/local/sbin
 # Gcloud sdk
 fish_add_path ~/.google-cloud-sdk/bin
 
+# Rancher Desktop
+fish_add_path ~/.rd/bin
+
 # Hook in asdf if present
 if test -d ~/.asdf
     source ~/.asdf/asdf.fish
