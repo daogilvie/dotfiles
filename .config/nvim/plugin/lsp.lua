@@ -215,7 +215,8 @@ lsp_conf.gopls.setup({
 
 require("mason-null-ls").setup({
     ensure_installed = {
-        "black"
+        "black",
+        "vale"
     },
     automatic_installation = false,
     automatic_setup = true, -- Recommended, but optional
