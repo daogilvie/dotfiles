@@ -5,6 +5,7 @@ end
 
 # Set gopath
 set -g -x GOPATH ~/go
+fish_add_path ~/go/bin
 
 # Add Cargo to path
 fish_add_path ~/.cargo/bin
