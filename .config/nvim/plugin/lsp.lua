@@ -187,7 +187,11 @@ lsp_conf.rust_analyzer.setup({
 })
 
 lsp_conf.tsserver.setup({
-    on_attach = on_attach,
+    on_attach = function (client, bufnr)
+        on_attach(client, bufnr)
+        -- Disable formatting because we'll just use prettier.
+        client.server_capabilities.document_formatting = false
+    end,
     capabilities = capabilities,
 })
 
@@ -211,15 +215,40 @@ lsp_conf.gopls.setup({
     capabilities = capabilities,
 })
 
+lsp_conf.golangci_lint_ls.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+})
+
 -- Null ls covers off the odds and sods that main servers might not cater to.
 
 require("mason-null-ls").setup({
     ensure_installed = {
         "black",
-        "vale"
+        "vale",
     },
     automatic_installation = false,
     automatic_setup = true, -- Recommended, but optional
     handlers = {},
 })
-require("null-ls").setup()
+local null_ls = require("null-ls")
+null_ls.setup(
+    {
+        sources = { null_ls.builtins.formatting.prettier.with({
+            filetypes = {
+                "javascript",
+                "typescript",
+                "css",
+                "scss",
+                "html",
+                "json",
+                "yaml",
+                "markdown",
+                "graphql",
+                "md",
+                "txt",
+            },
+            only_local = "node_modules/.bin",
+        }) }
+    }
+)
