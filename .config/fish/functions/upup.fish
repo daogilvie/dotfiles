@@ -3,7 +3,7 @@ function upup -d "Upgrade all the things"
         brew update; brew upgrade; brew cleanup;
     end
     if command -sq nvim
-        nvim +PackerSync +TSUpdateSync +qa;
+        nvim +TSUpdateSync +qa;
     end
     if command -sq rustup
         rustup self update; rustup update;
