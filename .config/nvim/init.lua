@@ -1,9 +1,11 @@
--- Some important things that have to be set first
-local g = vim.g
+-- This file contains core vim/nvim settings that apply everywhere
+require "config.setup_core"
+require "config.setup_lazy"
 
--- Setting the leaders early to avoid any bad remaps.
-g.mapleader = [[ ]]
-g.maplocalleader = [[,]]
-
--- Packer-powered plugins
-require('plugins')
+vim.api.nvim_create_autocmd("User", {
+    pattern = "VeryLazy",
+    callback = function()
+        require "config.setup_autocmds"
+        require "config.setup_keymaps"
+    end,
+})
