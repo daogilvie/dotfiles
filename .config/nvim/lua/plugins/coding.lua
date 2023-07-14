@@ -76,7 +76,9 @@ local modules = {
                 },
             }
             for _, language in pairs(languages) do
-                vim.list_extend(adapters, language.adapters or {})
+              if language.test_adapters then
+                vim.list_extend(adapters, language.test_adapters())
+              end
             end
             return {
                 adapters = adapters,

@@ -39,6 +39,7 @@ end
 return {
     {
         "neovim/nvim-lspconfig",
+        name = "lspconfig",
         event = "BufReadPre",
         dependencies = {
             { "folke/neoconf.nvim",      cmd = "Neoconf", config = true },
@@ -60,10 +61,14 @@ return {
             { "<leader>vO", function() require("nvim-navbuddy").open() end, desc = "Code Outline (navbuddy)", },
         },
         config = function()
-            local servers = {}
-            servers = vim.tbl_deep_extend("force", servers, require('languages.lua').servers)
-            servers = vim.tbl_deep_extend("force", servers, require('languages.go').servers)
-            lsp_setup(servers)
+            local languages = { require('languages.lua'), require('languages.go'), require('languages.javascript') }
+            local lsp_servers = {}
+            for _, lang in pairs(languages) do
+              if lang.servers then
+                lsp_servers = vim.tbl_deep_extend('force', lsp_servers, lang.servers())
+              end
+            end
+            lsp_setup(lsp_servers)
         end,
     },
     {

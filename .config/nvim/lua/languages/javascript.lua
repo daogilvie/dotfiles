@@ -1,8 +1,10 @@
 local M = {}
 
-M.servers = {
+M.servers = function() 
+  return {
     tsserver = {},
 }
+end
 
 M.modules = {
     {
@@ -12,11 +14,12 @@ M.modules = {
     }
 }
 
-M.test_adapters = {
+M.test_adapters = function() return {
     require('neotest-jest')({
         jestCommand = "yarn test",
         env = { CI = true }
     })
 }
+end
 
 return M

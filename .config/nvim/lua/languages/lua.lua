@@ -1,6 +1,6 @@
 return {
     modules = {},
-    servers = {
+    servers = function () return {
         lua_ls = {
             settings = {
                 Lua = {
@@ -22,4 +22,5 @@ return {
             },
         },
     }
+  end
 }
