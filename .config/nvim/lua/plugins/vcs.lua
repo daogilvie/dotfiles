@@ -12,7 +12,7 @@ return {
             "tpope/vim-rhubarb",
         },
         keys = {
-            { "<leader>gg", ":Git <CR>", desc = "Open Fugitive" }
+            { "<leader>gg", ":Git <CR>", desc = "Open Fugitive" },
         }
     },
     {
