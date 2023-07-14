@@ -33,6 +33,7 @@ return {
                         winbar = {
                             "help",
                             "alpha",
+                            "fugitive",
                             "lazy",
                         },
                     },
