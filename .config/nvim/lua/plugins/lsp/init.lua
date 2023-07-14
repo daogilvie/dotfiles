@@ -15,7 +15,11 @@ local function lsp_capabilities()
 end
 
 local function lsp_setup(servers)
+    local navic = require("nvim-navic")
     lsp_attach(function(client, buffer)
+        if client.server_capabilities.documentSymbolProvider then
+            navic.attach(client, buffer)
+        end
         require("plugins.lsp.format").on_attach(client, buffer)
         require("plugins.lsp.keymaps").on_attach(client, buffer)
     end)
@@ -40,9 +44,20 @@ return {
             { "folke/neoconf.nvim",      cmd = "Neoconf", config = true },
             { "folke/neodev.nvim",       config = true },
             { "smjonas/inc-rename.nvim", config = true },
+            {
+                "SmiteshP/nvim-navbuddy",
+                dependencies = {
+                    "SmiteshP/nvim-navic",
+                    "MunifTanjim/nui.nvim",
+                },
+                opts = { lsp = { auto_attach = true } },
+            },
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
             "jay-babu/mason-null-ls.nvim",
+        },
+        keys = {
+            { "<leader>vO", function() require("nvim-navbuddy").open() end, desc = "Code Outline (navbuddy)", },
         },
         config = function()
             local servers = {}
