@@ -80,8 +80,8 @@ return {
                         enable = true,
                         border = 'none',
                         peek_definition_code = {
-                            ["<leader>df"] = "@function.outer",
-                            ["<leader>dF"] = "@class.outer",
+                            ["<leader>pf"] = "@function.outer",
+                            ["<leader>pF"] = "@class.outer",
                         },
                     },
                 },
