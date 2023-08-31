@@ -55,7 +55,6 @@ return {
             },
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
-            "jay-babu/mason-null-ls.nvim",
         },
         keys = {
             { "<leader>vO", function() require("nvim-navbuddy").open() end, desc = "Code Outline (navbuddy)", },
@@ -77,41 +76,4 @@ return {
         keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
         config = true
     },
-    {
-        "jose-elias-alvarez/null-ls.nvim",
-        event = "BufReadPre",
-        dependencies = { "mason.nvim" },
-        opts = function()
-            local null_ls = require("null-ls")
-            local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
-            local opts = {
-                sources = {
-                    null_ls.builtins.formatting.gofumpt,
-                },
-                on_attach = function(client, bufnr)
-                    if client.supports_method("textDocument/formatting") then
-                        vim.api.nvim_clear_autocmds({
-                            group = augroup,
-                            buffer = bufnr,
-                        })
-                        vim.api.nvim_create_autocmd("BufWritePre", {
-                            group = augroup,
-                            buffer = bufnr,
-                            callback = function()
-                                vim.lsp.buf.format({ bufnr = bufnr })
-                            end,
-                        })
-                    end
-                end,
-            }
-            return opts
-        end,
-        config = true,
-    },
-    {
-        "jay-babu/mason-null-ls.nvim",
-        opts = { ensure_installed = nil, automatic_installation = true, automatic_setup = false }
-    },
-
 }
