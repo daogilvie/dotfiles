@@ -16,7 +16,7 @@ return {
 
       map({ 'n' }, '<C-f>', tele.live_grep, 'Live Grep')
       map({ 'n' }, '<C-p>', tele_find_with_hidden, 'Find file (inc hidden)')
-      map({ 'n' }, '<leader>o', tele_file_browser, 'File Browswer')
+      map({ 'n' }, '<leader>o', tele_file_browser, 'File Browser')
       map({ 'n' }, '<leader>O', function()
         tele_file_browser({ path = '%:p:h', cwd_to_path = true })
       end, 'File Browser open at buffer')
@@ -90,7 +90,7 @@ return {
           borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
           color_devicons = true,
           use_less = true,
-          set_env = { ['COLORTERM'] = 'truecolor' },           -- default = nil,
+          set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
           file_previewer = require 'telescope.previewers'.vim_buffer_cat.new,
           grep_previewer = require 'telescope.previewers'.vim_buffer_vimgrep.new,
           qflist_previewer = require 'telescope.previewers'.vim_buffer_qflist.new,

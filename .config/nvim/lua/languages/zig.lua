@@ -39,6 +39,12 @@ M.modules = {
       }
     },
     ft = "zig"
+  },
+  {
+    "stevearc/overseer.nvim",
+    opts = {
+      templates = {"zig.debug_build"}
+    }
   }
 }
 

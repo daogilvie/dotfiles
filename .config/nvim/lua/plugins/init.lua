@@ -136,6 +136,9 @@ return {
             { "<leader>rs", "<cmd>OverseerSaveBundle<cr>",   desc = "Save Bundle" },
             { "<leader>rt", "<cmd>OverseerToggle<cr>",       desc = "Toggle" },
         },
+        opts = {
+          templates = {"builtin"}
+        },
         config = function(_, opts)
             local overseer = require('overseer')
             overseer.setup(opts)
