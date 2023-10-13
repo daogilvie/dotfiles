@@ -5,5 +5,6 @@ return {
     require(path .. 'lua'),
     require(path .. 'markdown'),
     require(path .. 'python'),
+    require(path .. 'terraform'),
     require(path .. 'zig'),
 }
