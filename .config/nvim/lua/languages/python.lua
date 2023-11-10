@@ -3,7 +3,9 @@ local M = {}
 M.servers = function()
     return {
         pyright = {},
-        ruff_lsp = {},
+        ruff_lsp = {
+            root_dir = require('lspconfig').util.root_pattern('requirements.txt'),
+        },
     }
 end
 
