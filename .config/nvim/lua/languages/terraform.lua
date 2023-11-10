@@ -4,7 +4,7 @@ M.servers = function()
     local util = require('lspconfig').util
     return {
         tflint = {},
-        terraform_ls = {}
+        terraformls = {}
     }
 end
 
