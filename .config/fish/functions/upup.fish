@@ -9,6 +9,7 @@ function upup -d "Upgrade all the things"
         rustup self update; rustup update;
     end
     if test -d ~/.asdf
+       and not command -sq mise
         asdf update; asdf plugin-update --all;
         if asdf which direnv &> /dev/null
             asdf direnv setup --shell fish --version latest;

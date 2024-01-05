@@ -26,8 +26,10 @@ fish_add_path ~/.google-cloud-sdk/bin
 # Rancher Desktop
 fish_add_path ~/.rd/bin
 
-# Hook in asdf if present
-if test -d ~/.asdf
+# Hook in Mise if present, else try asdf
+if command -sq mise
+    mise activate fish | source
+else if test -d ~/.asdf
     source ~/.asdf/asdf.fish
     if ! test -L ~/.config/fish/completions/asdf.fish
         mkdir -p ~/.config/fish/completions; and ln -s ~/.asdf/completions/asdf.fish ~/.config/fish/completions
