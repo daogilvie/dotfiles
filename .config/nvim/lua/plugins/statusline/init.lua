@@ -35,6 +35,8 @@ return {
                             "alpha",
                             "fugitive",
                             "lazy",
+                            "dapui_console",
+                            "dap-repl"
                         },
                     },
                     always_divide_middle = true,
