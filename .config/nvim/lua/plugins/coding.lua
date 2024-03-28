@@ -90,6 +90,7 @@ local modules = {
             { "theHamsta/nvim-dap-virtual-text" },
             { "nvim-telescope/telescope-dap.nvim" },
             { "jay-babu/mason-nvim-dap.nvim" },
+            { "nvim-neotest/nvim-nio" }
         },
         keys = {
             { "<leader>dR", function() require("dap").run_to_cursor() end,     desc = "Run to Cursor", },
