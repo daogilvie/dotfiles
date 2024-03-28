@@ -8,7 +8,7 @@ set -g -x EDITOR nvim
 set -g -x VISUAL nvim
 
 # And less as pager
-set -g -x PAGER less
+set -g -x PAGER "less -FRX"
 
 if test "$TERM_PROGRAM" != "WarpTerminal"
     # Enable VI mode bindings
