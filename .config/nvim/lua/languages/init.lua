@@ -2,6 +2,7 @@ local path = ... .. '.'
 return {
     require(path .. 'go'),
     require(path .. 'javascript'),
+    require(path .. 'julia'),
     require(path .. 'lua'),
     require(path .. 'markdown'),
     require(path .. 'python'),
