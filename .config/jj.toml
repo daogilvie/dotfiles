@@ -1,0 +1,21 @@
+[ui]
+default-command = "log"
+
+[user]
+name = "Drum Ogilvie"
+
+[template-aliases]
+"format_short_id(id)" = "id.shortest(8)"
+
+[signing]
+sign-all = true
+backend = "ssh"
+
+[git]
+auto-local-branch = true
+
+[core]
+fsmonitor = "watchman"
+
+[snapshot]
+max-new-file-size = "10MiB"
