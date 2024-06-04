@@ -82,3 +82,6 @@ opt.colorcolumn = '80'
 -- I use Space and Comma as leader and local leader respectively
 vim.g.mapleader = [[ ]]
 vim.g.maplocalleader = [[,]]
+
+-- Make sure to add the mise shims to path
+vim.env.PATH = vim.env.HOME .. "/.local/share/mise/shims:" .. vim.env.PATH

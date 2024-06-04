@@ -28,7 +28,11 @@ fish_add_path ~/.rd/bin
 
 # Hook in Mise if present, else try asdf
 if command -sq mise
-    mise activate fish | source
+    if status is-interactive
+      mise activate fish | source
+    else
+      mise activate fish --shims | source
+    end
 else if test -d ~/.asdf
     source ~/.asdf/asdf.fish
     if ! test -L ~/.config/fish/completions/asdf.fish
