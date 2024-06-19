@@ -1,6 +1,6 @@
 -- This is adapted from alpha2phi
 -- https://github.com/alpha2phi/modern-neovim/blob/main/lua/plugins/completion/init.lua
-local icons = require('config.icons').lspkind
+local icons = require('config.icons')
 return {
     {
         "danymat/neogen",
@@ -163,7 +163,7 @@ return {
                         if max_width ~= 0 and #item.abbr > max_width then
                             item.abbr = string.sub(item.abbr, 1, max_width - 1) .. icons.ui.Ellipsis
                         end
-                        item.kind = icons[item.kind]
+                        item.kind = icons.lspkind[item.kind]
                         item.menu = source_names[entry.source.name]
                         item.dup = duplicates[entry.source.name] or duplicates_default
 
