@@ -149,4 +149,14 @@ return {
             end)
         end,
     },
+    -- So apparently this makes directory navigation a breeze
+    {
+        'stevearc/oil.nvim',
+        opts = {},
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = function(_, opts)
+            require("oil").setup()
+        end,
+        event = "VeryLazy"
+    }
 }
