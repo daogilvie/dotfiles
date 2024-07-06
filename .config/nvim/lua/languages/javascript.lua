@@ -1,9 +1,14 @@
 local M = {}
 
-M.servers = function() 
+M.servers = function()
   return {
     tsserver = {},
-}
+    jsonls = {
+      init_options = {
+        provideFormatter = false
+      }
+    }
+  }
 end
 
 M.modules = {
@@ -19,7 +24,7 @@ M.test_adapters = function() return {
         jestCommand = "yarn test",
         env = { CI = true }
     })
-}
+  }
 end
 
 return M
