@@ -229,14 +229,14 @@ local modules = {
   },
   -- Hydra is a whole thing, but I'm just putting it in here for debugging
   -- Taken from alpha2phi
-  -- {
-  --     "anuvyklack/hydra.nvim",
-  --     opts = {
-  --         specs = {
-  --             dap = dap_menu,
-  --         },
-  --     },
-  -- },
+  {
+    "anuvyklack/hydra.nvim",
+    opts = {
+      specs = {
+        dap = dap_menu,
+      },
+    },
+  },
   {
     "vim-test/vim-test",
     config = function()
