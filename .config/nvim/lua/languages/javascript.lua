@@ -19,10 +19,17 @@ M.modules = {
   }
 }
 
-M.test_adapters = function() return {
+M.test_adapters = function()
+  return {
     require('neotest-jest')({
-        jestCommand = "yarn test",
-        env = { CI = true }
+      env = { CI = true },
+      jestConfigFile = function(file)
+        if string.find(file, "/packages/") then
+          return string.match(file, "(.-/[^/]+/)src") .. "jest.config.ts"
+        end
+
+        return vim.fn.getcwd() .. "/jest.config.ts"
+      end,
     })
   }
 end
