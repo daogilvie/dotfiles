@@ -9,13 +9,22 @@ return {
       local tele = require('telescope.builtin')
       local tele_file_browser = require 'telescope'.extensions.file_browser.file_browser
       local trouble = require("trouble.providers.telescope")
+      local trouble_tele_source = require("trouble.sources.telescope")
       local function tele_find_with_hidden()
         local opts = { hidden = true }
         return tele.find_files(opts)
       end
+      local function tele_grep_with_hidden()
+        local opts = { additional_args = { "--hidden" } }
+        return tele.live_grep(opts)
+      end
 
-      map({ 'n' }, '<C-f>', tele.live_grep, 'Live Grep')
+      -- Telescope keymaps
+
+      map({ 'n' }, '<C-f>', tele_grep_with_hidden, 'Live Grep (inc hidden)')
       map({ 'n' }, '<C-p>', tele_find_with_hidden, 'Find file (inc hidden)')
+      map({ 'n' }, '<C-s>', tele.git_branches, 'Git branches')
+      map({ 'n' }, '<C-c>', tele.git_commits, 'Git branches')
       map({ 'n' }, '<leader>o', tele_file_browser, 'File Browser')
       map({ 'n' }, '<leader>O', function()
         tele_file_browser({ path = '%:p:h', cwd_to_path = true })
@@ -44,7 +53,7 @@ return {
         local num_selections = #(picker:get_multi_selection())
 
         if num_selections > 1 then
-          trouble.open_selected_with_trouble(prompt_bufnr)
+          trouble_tele_source.open(prompt_bufnr)
         else
           actions.select_default(prompt_bufnr)
         end
@@ -69,16 +78,9 @@ return {
           sorting_strategy = 'descending',
           layout_strategy = 'horizontal',
           layout_config = {
-            width = 0.75,
-            preview_cutoff = 120,
+            width = 0.90,
+            height = 0.90,
             prompt_position = 'bottom',
-            horizontal = {
-              mirror = false,
-            },
-            vertical = {
-              mirror = false,
-              height = 1,
-            },
           },
           file_sorter = require 'telescope.sorters'.get_fuzzy_file,
           file_ignore_patterns = {},
@@ -120,6 +122,13 @@ return {
                 ['<C-n>'] = fb_actions.create_from_prompt,
               },
             }
+          },
+          fzf = {
+            fuzzy = true,                   -- false will only do exact matching
+            override_generic_sorter = true, -- override the generic sorter
+            override_file_sorter = true,    -- override the file sorter
+            case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
+            -- the default case_mode is "smart_case"
           }
         }
       }
