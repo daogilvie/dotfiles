@@ -85,3 +85,8 @@ vim.g.maplocalleader = [[,]]
 
 -- Make sure to add the mise shims to path
 vim.env.PATH = vim.env.HOME .. "/.local/share/mise/shims:" .. vim.env.PATH
+
+-- Providers
+vim.g.python3_host_prog = vim.env.HOME .. "/.local/share/nvim/venv/bin/python"
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
