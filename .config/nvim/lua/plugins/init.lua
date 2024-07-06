@@ -162,5 +162,15 @@ return {
       require("oil").setup()
     end,
     event = "VeryLazy"
+  },
+  {
+    'nvim-pack/nvim-spectre',
+    dependencies = { ' nvim-lua/plenary.nvim' },
+    keys = {
+      { '<leader>S', '<cmd>lua require("spectre").toggle()<CR>', desc = "Toggle Spectre" }
+    },
+    config = function(_, opts)
+      require('spectre').setup(opts)
+    end
   }
 }
