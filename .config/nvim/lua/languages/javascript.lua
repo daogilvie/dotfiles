@@ -12,11 +12,11 @@ M.servers = function()
 end
 
 M.modules = {
-    {
-        'nvim-neotest/neotest-jest',
-        dependencies = { 'nvim-neotest/neotest' },
-        ft = { "js", "ts" },
-    }
+  {
+    'nvim-neotest/neotest-jest',
+    dependencies = { 'nvim-neotest/neotest' },
+    ft = { "js", "ts" },
+  }
 }
 
 M.test_adapters = function() return {
