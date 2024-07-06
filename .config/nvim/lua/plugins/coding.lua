@@ -325,7 +325,24 @@ local modules = {
       }, neotest_ns)
       require("neotest").setup(opts)
     end,
-  }
+  },
+  {
+    "Equilibris/nx.nvim",
+
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+    },
+
+    opts         = {
+      -- See below for config options
+      nx_cmd_root = "nx",
+    },
+
+    -- Plugin will load when you use these keys
+    keys         = {
+      { "<leader>nx", "<cmd>Telescope nx actions<CR>", desc = "nx actions" }
+    },
+  },
 }
 
 -- Pull the modules from the programming files
