@@ -83,8 +83,11 @@ opt.colorcolumn = '80'
 vim.g.mapleader = [[ ]]
 vim.g.maplocalleader = [[,]]
 
--- Make sure to add the mise shims to path
+-- Make sure to add the mise shims to path,
+-- but after the lua 5.1 install required by lazy
 vim.env.PATH = vim.env.HOME .. "/.local/share/mise/shims:" .. vim.env.PATH
+vim.env.PATH = vim.env.HOME .. "/.local/share/mise/installs/lua/5.1/bin:" .. vim.env.PATH
+vim.env.PATH = vim.env.HOME .. "/.local/share/mise/installs/lua/5.1/luarocks/bin:" .. vim.env.PATH
 
 -- Providers
 vim.g.python3_host_prog = vim.env.HOME .. "/.local/share/nvim/venv/bin/python"
