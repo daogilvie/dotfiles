@@ -76,7 +76,7 @@ return {
           initial_mode = 'insert',
           selection_strategy = 'reset',
           sorting_strategy = 'descending',
-          layout_strategy = 'horizontal',
+          layout_strategy = 'vertical',
           layout_config = {
             width = 0.90,
             height = 0.90,
@@ -86,6 +86,7 @@ return {
           file_ignore_patterns = {},
           generic_sorter = require 'telescope.sorters'.get_generic_fuzzy_sorter,
           path_display = {
+            "filename_first"
           },
           winblend = 0,
           border = {},
